@@ -1,0 +1,13 @@
+<!-- <h1>{{title}}</h1>
+<p>O resultado da som de 20 + 10 é {{somar(20, 10)}}</p>
+
+<input [type]="tipoInput" value="Valor Inicial">
+pode usar 2 data bindings juntos
+<input [type]="tipoInput" [value]="title">
+<button (click)="mudarTipoDoInput()">Mostrar/esconder</button> -->
+
+<input type="number" placeholder="Digite o primeiro numero" [(ngModel)]="n1" name="valor1">
+<input type="number" placeholder="Digite o segundo numero" [(ngModel)]="n2" name="valor2">
+<p>
+{{n1}} + {{n2}} = {{ n1 + n2}}
+</p>
