@@ -6,8 +6,14 @@ pode usar 2 data bindings juntos
 <input [type]="tipoInput" [value]="title">
 <button (click)="mudarTipoDoInput()">Mostrar/esconder</button> -->
 
-<input type="number" placeholder="Digite o primeiro numero" [(ngModel)]="n1" name="valor1">
+<!-- <input type="number" placeholder="Digite o primeiro numero" [(ngModel)]="n1" name="valor1">
 <input type="number" placeholder="Digite o segundo numero" [(ngModel)]="n2" name="valor2">
 <p>
 {{n1}} + {{n2}} = {{ n1 + n2}}
-</p>
+</p> -->
+
+<section >{{valor}}
+    <button class="numero" (click)="decrementar()">-</button>
+    <button (click)="incrementar()">+</button>
+</section>
+

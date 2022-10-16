@@ -32,4 +32,13 @@ export class AppComponent {
       this.tipoInput = 'password'
     }
   }
+
+  valor: number = 0;
+
+  incrementar(): void{
+    this.valor++;
+  }
+  decrementar(): void {
+    this.valor--;
+  }
 }
