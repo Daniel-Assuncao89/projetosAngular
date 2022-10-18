@@ -68,6 +68,21 @@
     margin-left: 5px;
 }
 
+.btn-confirmar {
+    width: 70%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgb(70, 70, 248);
+    border: none;
+    box-shadow: 5px 5px rgba(128, 128, 128, 0.233);
+    cursor: pointer;
+}
+
+.btn-confirmar:hover {
+    background-color: rgba(56, 56, 223, 0.568);
+}
+
 .form-body p {
     text-align: left;
 }
