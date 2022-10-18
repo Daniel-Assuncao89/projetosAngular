@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="body-credit">
+        <div class="card-front">
+            <img src="https://clickfinancas.com/wp-content/uploads/2020/12/visa-cassino-brazl.jpg" alt="" class="bandeira">
+            <strong><p>{{numeroCartao}}</p></strong>
+            <p>{{nomeCartao}}</p>
+        </div>
+        <div class="mesAno">
+            <strong>{{mes + "/" + ano}}</strong>
+        </div>
+        <div class="card-back">
+            <div class="tarja"></div>
+            <p>{{cvc}}</p>
+        </div>
+    </div>
+    <div class="form-container">
+        <form class="form-body">
+            <label for="valor1">Nome: </label>
+            <input type="text" name="valor1" id="name" placeholder="Digite seu nome aqui" [(ngModel)]="nomeCartao">
+            <label for="valor2">Numero do cartão: </label>
+            <input type="number" name="valor2" id="name2" placeholder="Digite numero do cartao" [(ngModel)]="numeroCartao">
+            <label for="valor3"> <p>Expiração &nbsp;&nbsp;&nbsp;&nbsp; CVC</p> </label>
+            <div class="form-vencimento">
+                <input type="number" name="valor3" id="name3" placeholder="Mês" [(ngModel)]="mes">
+                <label for="valor4"></label>
+                <input type="number" name="valor4" id="name4" placeholder="Ano" [(ngModel)]="ano">
+                <input type="number" name="valor5" id="name5" placeholder="000" [(ngModel)]="cvc">
+            </div>
+        </form>
+    </div>
+</div>
