@@ -1,0 +1,17 @@
+.card {
+    width: 250px;
+    height: 400px;
+}
+
+.card-subtitle {
+    font-size: 13px;
+}
+
+.badge {
+    font-size: 10px
+}
+
+.x {
+    border: none;
+    background-color: white;
+}

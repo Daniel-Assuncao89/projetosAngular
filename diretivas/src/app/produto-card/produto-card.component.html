@@ -1,0 +1,27 @@
+<!--ngIf condicional if para mostrar elemento HTML ou componente-->
+<div class="card" *ngIf="mostrarProduto">
+    <img [src]="prod.imagem" alt="Pc Gamer" class="card-image-top">
+    <div class="card-body">
+        <h5 class="card-title">{{ prod.nome }}</h5>
+        <h6 class="card-subtitle text-muted">R${{prod.preco}}</h6>
+
+        <!-- <= a 10 -> vermelho
+            > 10 && <= 30 -> amarelo
+            > 30 && < 100 -> azul
+            > 100 -> verde
+        -->
+        <span class="badge mb-1" 
+        [ngClass]="{'bg-danger': prod.estoque <= 10, 
+        'bg-warning': prod.estoque > 10 && prod.estoque <= 30, 
+        'bg-primary': prod.estoque > 30 && prod.estoque <= 100, 
+        'bg-success': prod.estoque > 100}"
+        >{{prod.estoque}} unidades restantes</span>
+        <p class="card-text text-truncate">{{prod.descricao}}</p>
+        <button class="btn btn-sm btn-danger" (click)="esconderProduto()">Esconder Produto</button>
+        <button class="x ms-5" (click)="excluir(prod.nome)">X</button>
+    </div>
+</div>
+<div class="card" *ngIf="mostrarProduto == false">
+    <p>O produto {{prod.nome}} foi escondido para todos os usuarios.</p>
+    <button class="btn btn-sm btn-danger" (click)="esconderProduto()">Mostrar Produto</button>
+</div>
