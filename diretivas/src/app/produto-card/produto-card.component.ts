@@ -17,27 +17,22 @@ export class ProdutoCardComponent implements OnInit {
     preco: 0
   }
 
-  @Output() excluindoEvent = new EventEmitter<String>();
-
-  excluir(indexExclusao: String){
-    this.excluindoEvent.emit(indexExclusao)
-  }
-
   mostrarProduto: boolean = true
 
-  esconderProduto(): void {
-    if(this.mostrarProduto){
-      this.mostrarProduto = false
-    } else {
-      this.mostrarProduto = true
-    }
+  @Output()
+  deletar: EventEmitter<Produto> = new EventEmitter<Produto>()
+
+  emitirEventoDeletar(): void {
+    this.deletar.emit(this.prod)
   }
 
-  // showProduto(): void {
-  //   if(!this.mostrarProduto) {
-  //     this.mostrarProduto = true
-  //     }
-  // }
+  esconderProduto(): void {
+    this.mostrarProduto = false
+  }
+
+  aparecerProduto(): void {
+    this.mostrarProduto = true
+  }
 
   constructor() { }
 
