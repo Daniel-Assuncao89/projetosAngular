@@ -1,0 +1,38 @@
+<div class="flex">
+<mat-card class="card-form">
+  <mat-card-title>Cadastro de Usuários</mat-card-title>
+  <mat-card-content>
+    <!--
+      Informar que o formulario será validado pelo Template Driven Forms a partir do uso de #nomeVariavel="ngForm". Os metodos de validação sao: maxlength, minlength, required...e etc.
+     -->
+    <form action="#" class="form-body" #userForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input type="text" name="nome" matInput [(ngModel)]="dadosUsuario.nome" required minlength="2" #inputNome="ngModel">
+        <mat-error *ngIf="inputNome">nome invalido</mat-error>
+        <mat-error *ngIf="inputNome.errors?.['minlength']">Quantidade de caracteres invalida</mat-error>
+        <mat-error *ngIf="inputNome.errors?.['required']">Campo Obrigatorio</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Sobrenome</mat-label>
+        <input type="text" name="sobrenome" matInput [(ngModel)]="dadosUsuario.sobrenome" required minlength="2" #inputSobrenome="ngModel">
+        <mat-error *ngIf="inputSobrenome">Sobrenome invalido</mat-error>
+        <mat-error *ngIf="inputSobrenome.errors?.['minlength']">Quantidade de caracteres invalida</mat-error>
+        <mat-error *ngIf="inputSobrenome.errors?.['required']">Campo Obrigatorio</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" name="email" matInput [(ngModel)]="dadosUsuario.email" required minlength="2" #inputEmail="ngModel">
+        <mat-error>Email invalido</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input type="password" name="senha" matInput [(ngModel)]="dadosUsuario.senha" required minlength="6" #inputSenha="ngModel">
+        <mat-error>Senha invalido</mat-error>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Cadastrar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+</div>
+
