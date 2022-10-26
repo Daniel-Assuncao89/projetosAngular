@@ -14,4 +14,7 @@ export class AppComponent {
     senha: ''
   }
   
+  enviarForm(){
+    alert('Enviando Formulario.')
+  }
 }

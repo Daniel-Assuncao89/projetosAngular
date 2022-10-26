@@ -1,0 +1,23 @@
+<!--
+    utilizamos [formControl] quando o FormControl está fora de um FormGroup
+-->
+<mat-card>
+    <mat-card-title>Cadastro</mat-card-title>
+    <mat-card-content>
+        <form action="" (ngSubmit)="enviar()" [formGroup]="dadosForm">
+            <mat-form-field appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input type="text" matInput formControlName="nome">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input type="password" matInput formControlName="senha">
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="accent">Enviar</button>
+        </form>
+    </mat-card-content>
+</mat-card>
