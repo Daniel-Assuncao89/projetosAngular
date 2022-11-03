@@ -1,7 +1,7 @@
 <main class="container">
   <section class="search">
     <img src="/assets/github.svg" alt="Github">
-    <form action="#" id="search-form" [formGroup]="githubForm">
+    <form action="#" id="search-form" [formGroup]="githubForm" (ngSubmit)="procurar()">
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
         <input type="text" matInput placeholder="Ex: frogs123" formControlName="username">
@@ -10,5 +10,25 @@
         <mat-icon>search</mat-icon>
       </button>
     </form>
+    <mat-expansion-panel *ngIf="gUser != undefined" class="panel">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Visualizar dados de 
+        </mat-panel-title>
+        <mat-panel-description>
+          {{gUser?.name}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <img src= "{{ gUser?.avatar_url }}" alt="avatar">
+      <p>Nome: {{ gUser?.name }}</p>
+      <p>Login: {{ gUser?.login }}</p>
+      <p>Followers: {{ gUser?.followers }}</p>
+      <p>Following: {{ gUser?.following }}</p>
+      <p>Bio: {{ gUser?.bio }} </p>
+      <p>HTML url: {{ gUser.html_url }} </p>
+      <p>Repositorios publicos: {{ gUser?.html_url }} </p>
+      <p> {{gRepo?.nameRepo}} </p>
+    </mat-expansion-panel>
+    
   </section>
 </main>

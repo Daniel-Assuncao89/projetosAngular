@@ -16,6 +16,10 @@
   margin-bottom: 8px;
 }
 
+.panel {
+  margin-top: 20px;
+}
+
 #search-form {
   width: 350px;
   display: flex;
