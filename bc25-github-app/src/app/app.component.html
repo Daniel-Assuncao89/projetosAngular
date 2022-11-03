@@ -1,0 +1,14 @@
+<main class="container">
+  <section class="search">
+    <img src="/assets/github.svg" alt="Github">
+    <form action="#" id="search-form" [formGroup]="githubForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput placeholder="Ex: frogs123" formControlName="username">
+      </mat-form-field>
+      <button mat-flat-button color="accent" matTooltip="Procurar Usuário" [disabled]="githubForm.invalid">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </section>
+</main>
