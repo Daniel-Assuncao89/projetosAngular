@@ -26,8 +26,19 @@
       <p>Following: {{ gUser?.following }}</p>
       <p>Bio: {{ gUser?.bio }} </p>
       <p>HTML url: {{ gUser.html_url }} </p>
-      <p>Repositorios publicos: {{ gUser?.html_url }} </p>
-      <p> {{gRepo?.nameRepo}} </p>
+      <p>Repositorios publicos: {{ gUser?.public_repos }} </p>
+      <hr/>
+      <mat-card>
+        <mat-card-title>Repositorio</mat-card-title> 
+        <mat-card-subtitle>{{gRepo?.name}}</mat-card-subtitle>
+        <mat-card-content>
+          <p> Visibility: {{gRepo.visibility}} </p>
+          <p> Description: {{gRepo?.description}} </p>
+          <p> Language: {{gRepo?.language}} </p>
+          <p> Fork: {{gRepo?.fork}} </p>
+        </mat-card-content>
+      </mat-card>
+      
     </mat-expansion-panel>
     
   </section>

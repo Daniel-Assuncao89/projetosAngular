@@ -8,6 +8,7 @@ import { GithubRepos, GithubUser } from '../interfaces/githubUser';
 export class GithubApiService {
 
   private readonly baseURL: string = 'https://api.github.com/users/'
+  private readonly baseURL2: string = 'https://api.github.com/'
 
   constructor(
     private http: HttpClient
@@ -26,8 +27,7 @@ export class GithubApiService {
      */
     return this.http.get<GithubUser>(this.baseURL + username) // retorna um observable
   }
-
   procurarRepo(username:string) {
-    return this.http.get<GithubRepos>(this.baseURL + username + "/repos")
+    return this.http.get<GithubRepos>(this.baseURL2 +"repos/" + username + "/Adm-Bot-SocialNetwork")
   }
 }

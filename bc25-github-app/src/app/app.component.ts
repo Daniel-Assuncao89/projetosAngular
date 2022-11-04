@@ -28,10 +28,12 @@ export class AppComponent {
       //console.log(user)
      // console.log(`O usuario ${user.login} tem ${user.followers} seguidores`)
      this.gUser = user
-     this.githubService.procurarRepo(username).subscribe((repo) => {
-      this.gRepo = repo
     })
-    }
-    )
+    this.githubService.procurarRepo(username).subscribe((repos) => {
+      //console.log(user)
+     // console.log(`O usuario ${user.login} tem ${user.followers} seguidores`)
+     this.gRepo = repos
+     console.log(repos)
+    })
   }
 }

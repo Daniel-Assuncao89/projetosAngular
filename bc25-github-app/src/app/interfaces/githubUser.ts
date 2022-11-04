@@ -13,7 +13,9 @@ export interface GithubUser { // serve para representar os dados que a API retor
   }
 
   export interface GithubRepos {
-    nameRepo: string
+    name: string
     description: string
     fork: boolean
+    language: string
+    visibility: string
   }
