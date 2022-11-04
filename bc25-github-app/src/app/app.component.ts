@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GithubRepos, GithubUser } from './interfaces/githubUser';
 import { GithubApiService } from './services/github-api.service';
 
@@ -14,11 +16,12 @@ export class AppComponent {
   })
 
   gUser!: GithubUser
-  gRepo!: GithubRepos
+  gRepo: GithubRepos[] = []
 
   constructor(
     private fb: FormBuilder,
-    private githubService: GithubApiService
+    private githubService: GithubApiService,
+    private snackBar: MatSnackBar // componente do material para mostrar mensagens
   ) {}
 
   procurar(){
@@ -28,12 +31,23 @@ export class AppComponent {
       //console.log(user)
      // console.log(`O usuario ${user.login} tem ${user.followers} seguidores`)
      this.gUser = user
-    })
+    },
+    (erro) => {
+      // HttpErrorResponse
+      // preciso saber se o meu erro vem dessa classe
+
+      if (erro instanceof HttpErrorResponse) {
+        if (erro.status == 404) {
+          this.snackBar.open(`Usuario ${username} not found`, 'OK')
+        }
+      }
+    }
+    )
     this.githubService.procurarRepo(username).subscribe((repos) => {
       //console.log(user)
      // console.log(`O usuario ${user.login} tem ${user.followers} seguidores`)
-     this.gRepo = repos
      console.log(repos)
+     this.gRepo = repos
     })
   }
 }

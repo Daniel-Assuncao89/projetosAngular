@@ -1,7 +1,7 @@
 <main class="container">
-  <section class="search">
-    <img src="/assets/github.svg" alt="Github">
-    <form action="#" id="search-form" [formGroup]="githubForm" (ngSubmit)="procurar()">
+  <section class="search" >
+    <img src="/assets/github.svg" alt="Github" *ngIf="gUser == undefined">
+    <form action="#" id="search-form" [formGroup]="githubForm" (ngSubmit)="procurar()" *ngIf="gUser == undefined">
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
         <input type="text" matInput placeholder="Ex: frogs123" formControlName="username">
@@ -10,36 +10,7 @@
         <mat-icon>search</mat-icon>
       </button>
     </form>
-    <mat-expansion-panel *ngIf="gUser != undefined" class="panel">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Visualizar dados de 
-        </mat-panel-title>
-        <mat-panel-description>
-          {{gUser?.name}}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <img src= "{{ gUser?.avatar_url }}" alt="avatar">
-      <p>Nome: {{ gUser?.name }}</p>
-      <p>Login: {{ gUser?.login }}</p>
-      <p>Followers: {{ gUser?.followers }}</p>
-      <p>Following: {{ gUser?.following }}</p>
-      <p>Bio: {{ gUser?.bio }} </p>
-      <p>HTML url: {{ gUser.html_url }} </p>
-      <p>Repositorios publicos: {{ gUser?.public_repos }} </p>
-      <hr/>
-      <mat-card>
-        <mat-card-title>Repositorio</mat-card-title> 
-        <mat-card-subtitle>{{gRepo?.name}}</mat-card-subtitle>
-        <mat-card-content>
-          <p> Visibility: {{gRepo.visibility}} </p>
-          <p> Description: {{gRepo?.description}} </p>
-          <p> Language: {{gRepo?.language}} </p>
-          <p> Fork: {{gRepo?.fork}} </p>
-        </mat-card-content>
-      </mat-card>
-      
-    </mat-expansion-panel>
-    
+    <img [src]= gUser?.avatar_url alt="">
+    <p *ngFor="let item of gRepo"> {{ item?.full_name }} </p> 
   </section>
 </main>
