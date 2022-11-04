@@ -1,0 +1,27 @@
+<main class="geral">
+  <img src="https://www.achecep.com.br/images/logomarca-achecep.gif" alt="">
+  <form action="#" id="search-form" [formGroup]="cepForm" (ngSubmit)="buscar()">
+    <mat-form-field appearance="outline">
+      <mat-label>Cep</mat-label>
+      <input type="number" matInput placeholder="Ex: 123456789" formControlName="cep">
+    </mat-form-field>
+    <button mat-flat-button color="accent" matTooltip="Procurar Cep" [disabled]="cepForm.invalid" class="botao">
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+  <mat-card *ngIf="cepF != undefined">
+    <mat-card-title>Resultado da Busca:
+      <mat-card-content>
+        <mat-list class="lista">
+          <mat-list-item> Localidade: {{cepF?.localidade}}</mat-list-item>
+          <mat-list-item> CEP: {{cepF?.cep}} </mat-list-item>
+          <mat-list-item> Bairro: {{cepF?.bairro}} </mat-list-item>
+          <mat-list-item> UF: {{cepF?.uf}} </mat-list-item>
+          <mat-list-item> Complemento: {{cepF?.complemento}} </mat-list-item>
+          <mat-list-item> DDD: {{cepF?.ddd}}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card-title>
+  </mat-card>
+
+</main>
