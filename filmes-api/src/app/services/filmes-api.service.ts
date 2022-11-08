@@ -10,6 +10,8 @@ export class FilmesApiService {
 
   private readonly baseURL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=875db3a04ae3d664930acfe922315150&language=pt-BR'
 
+  private readonly baseURL2 = 'https://api.themoviedb.org/3/search/movie?api_key=875db3a04ae3d664930acfe922315150&language=pt-BR&query='
+
   constructor(
     private http: HttpClient
   ) { }
@@ -18,4 +20,7 @@ export class FilmesApiService {
     return this.http.get<ArrayGeral>(this.baseURL + "&page=" + pagina)
   }
 
+  procurarNome(nome: string){
+    return this.http.get<ArrayGeral>(this.baseURL2 + nome)
+  }
 }

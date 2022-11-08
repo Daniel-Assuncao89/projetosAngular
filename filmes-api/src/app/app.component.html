@@ -1,27 +1,54 @@
 <main class="container">
   <section class="search">
-    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="">
+    <img
+      src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+      alt="">
     <form action="#" id="search-form" [formGroup]="filmeForm" (ngSubmit)="procurar()">
       <mat-form-field appearance="outline">
         <mat-label>Inserir a pagina para busca</mat-label>
         <input type="number" matInput placeholder="Ex: 1,2,3.." formControlName="paginas">
       </mat-form-field>
-      <button mat-flat-button color="primary" matTooltip="Procurar" [disabled]="filmeForm.invalid">
+      <button mat-flat-button color="primary" matTooltip="Procurar">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+    <form action="#" id="search-name" [formGroup]="filmeForm" (ngSubmit)="buscaPorNome()">
+      <mat-form-field appearance="outline">
+        <mat-label>Inserir nome do Filme para Buscar</mat-label>
+        <input type="text" matInput placeholder="Ex: Spider-man" formControlName="nome">
+      </mat-form-field>
+      <button mat-flat-button color="primary" matTooltip="Procurar nome">
         <mat-icon>search</mat-icon>
       </button>
     </form>
   </section>
-  <p> PAGINA: {{gFilme.page}} </p> 
-  <mat-card class="example-card" *ngFor="let item of gFilme.results">
-  <mat-card-title>Filme: {{item.title}} </mat-card-title>
-  <mat-card-subtitle> Popularidade: {{item.popularity}} </mat-card-subtitle>
-  <mat-card-content>
-    <p>
-      <b>Ano de lançamento:</b> {{item.release_date}} <br>
-      <b>Overview:</b> {{item.overview}} <br>
-      <b>Conteúdo Adulto:</b> {{item.adult}}
-    </p>
-  </mat-card-content>
-  </mat-card>
-  Total de paginas: {{ gFilme.total_pages }}
+  <nav *ngIf="gFilme != undefined">
+    <p> PAGINA: {{gFilme.page}} </p>
+    <mat-card class="example-card" *ngFor="let item of gFilme.results">
+      <mat-card-title>Filme: {{item.title}} </mat-card-title>
+      <mat-card-subtitle> Popularidade: {{item.popularity}} </mat-card-subtitle>
+      <mat-card-content>
+        <p>
+          <b>Ano de lançamento:</b> {{item.release_date}} <br>
+          <b>Overview:</b> {{item.overview}} <br>
+          <b>Conteúdo Adulto:</b> {{item.adult}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+    Total de paginas: {{ gFilme.total_pages }}
+  </nav>
+  <nav *ngIf="g!= undefined">
+    <p> PAGINA: {{g.page}} </p>
+    <mat-card class="example-card" *ngFor="let item of g.results">
+      <mat-card-title>Filme: {{item.title}} </mat-card-title>
+      <mat-card-subtitle> Popularidade: {{item.popularity}} </mat-card-subtitle>
+      <mat-card-content>
+        <p>
+          <b>Ano de lançamento:</b> {{item.release_date}} <br>
+          <b>Overview:</b> {{item.overview}} <br>
+          <b>Conteúdo Adulto:</b> {{item.adult}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </nav>
 </main>

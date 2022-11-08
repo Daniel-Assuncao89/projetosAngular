@@ -11,11 +11,12 @@ import { FilmesApiService } from './services/filmes-api.service';
 })
 export class AppComponent {
   filmeForm: FormGroup = this.fb.group({
-    paginas: ['', [Validators.required] ]
+    paginas: ['', [Validators.required] ],
+    nome: ['', [Validators.required]]
   })
 
   gFilme!: ArrayGeral
-  g!: Filmes
+  g!: ArrayGeral
 
   constructor(
     private fb: FormBuilder,
@@ -30,4 +31,14 @@ export class AppComponent {
       this.gFilme = geral
     })
   }
+
+  buscaPorNome(){
+    const nome = this.filmeForm.get('nome')?.value
+
+    this.filmesService.procurarNome(nome).subscribe((nome) =>{
+      console.log(nome)
+      this.g = nome
+    })
+  }
+  
 }
