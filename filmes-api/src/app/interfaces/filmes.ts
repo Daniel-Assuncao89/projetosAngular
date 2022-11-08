@@ -8,4 +8,5 @@ export interface Filmes {
     popularity: Number
     adult: boolean
     }]
+    total_pages:number
 }
