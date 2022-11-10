@@ -34,14 +34,6 @@ const rotas: Routes = [
     {
         path: 'produtos/:idProduto', // rota com o parametro idProduto
         component: ProdutoComponent
-    },
-    {
-        path: 'produtos/:idProduto/produtos',
-        component: ListarProdutosComponent
-    },
-    {
-        path: 'produtos/:idProduto/cadastro',
-        component: CadastroComponent
     }
     
 ]

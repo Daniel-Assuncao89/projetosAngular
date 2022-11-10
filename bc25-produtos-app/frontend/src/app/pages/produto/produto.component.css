@@ -12,6 +12,12 @@
   mat-card + mat-card {
     margin-left: 32px;
   }
+
+  div {
+    display: flex;
+    justify-content: start;
+    height: 70%;
+  }
   
   .desc {
     text-align: justify;
