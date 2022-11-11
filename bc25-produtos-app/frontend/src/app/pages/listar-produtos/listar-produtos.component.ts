@@ -9,6 +9,8 @@ import { ProdutosApiService } from 'src/app/services/produtos-api.service';
 })
 export class ListarProdutosComponent implements OnInit {
 
+  altImg: string = 'https://igp.rs.gov.br/themes/modelo-noticias/images/outros/GD_imgSemImagem.png'
+
   p: Produto[] = []
   constructor(
     private produtosService: ProdutosApiService

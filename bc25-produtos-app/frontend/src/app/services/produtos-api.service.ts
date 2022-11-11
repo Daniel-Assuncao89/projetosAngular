@@ -20,4 +20,9 @@ export class ProdutosApiService {
   procurarPorId(id: number) {
     return this.http.get<Produto>(this.baseURL +"/" + id) // Requisição para recuperar um produto por id
   }
+
+  criarProduto(prod: Produto) { // prod possui as informações do produto que será salvo
+    
+    return this.http.post<Produto>(this.baseURL, prod)
+  }
 }

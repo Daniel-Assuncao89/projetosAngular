@@ -10,13 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProdutoComponent } from './pages/produto/produto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { Error404Component } from './pages/error404/error404.component';
+import { MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarProdutosComponent,
     ProdutoComponent,
-    CadastroComponent
+    CadastroComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,9 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     MaterialModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

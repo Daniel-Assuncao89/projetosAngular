@@ -19,7 +19,9 @@ export class ProdutoComponent implements OnInit {
   })
 
   altImg: string = 'https://igp.rs.gov.br/themes/modelo-noticias/images/outros/GD_imgSemImagem.png'
+
   produto!: Produto
+  produtoNaoEncontrado: Boolean = false
 
   //injetar um objeto que permite acessar os parametros da rota
 
@@ -29,10 +31,15 @@ export class ProdutoComponent implements OnInit {
     private produtoService: ProdutosApiService
   ) { }
 
+
+
   ngOnInit(): void {
     //paraMap é um objeto que po´ssui acesso a todos os parâmetros da rota atual
     // get funciona para recuperar o valor de um parametro da rota atual
     const idProduto = this.rota.snapshot.paramMap.get('idProduto') as string
+    
+    
+
     this.produtoService.procurarPorId(parseInt(idProduto)).subscribe(
       (prod) => {
         this.produto = prod
@@ -43,7 +50,11 @@ export class ProdutoComponent implements OnInit {
           foto: prod.foto,
           preco: prod.preco
         })
-    })
+    },
+    (erro) => {
+        this.produtoNaoEncontrado = true
+    }
+    )
   }
   /**
    * setValue permite alterar o valor dos campos de um formGroup

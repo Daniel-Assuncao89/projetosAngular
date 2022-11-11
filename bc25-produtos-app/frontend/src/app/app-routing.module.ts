@@ -1,7 +1,7 @@
-import { Component, NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AppComponent } from "./app.component";
 import { CadastroComponent } from "./pages/cadastro/cadastro.component";
+import { Error404Component } from "./pages/error404/error404.component";
 import { ListarProdutosComponent } from "./pages/listar-produtos/listar-produtos.component";
 import { ProdutoComponent } from "./pages/produto/produto.component";
 
@@ -34,6 +34,10 @@ const rotas: Routes = [
     {
         path: 'produtos/:idProduto', // rota com o parametro idProduto
         component: ProdutoComponent
+    },
+    {
+        path: '**',
+        component: Error404Component
     }
     
 ]
