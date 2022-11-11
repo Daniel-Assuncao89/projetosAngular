@@ -1,30 +1,9 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "nome": "Feito à mão Congelado Salsicha",
-      "preco": "877.00",
-      "descricao": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-      "foto": ""
-    },
-    {
-      "id": 2,
-      "nome": "Inteligente Granito Calças",
-      "preco": "20.00",
-      "descricao": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-      "foto": ""
-    },
-    {
       "id": 3,
       "nome": "Pequeno Macio Chapéu",
       "preco": "686.00",
-      "descricao": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-      "foto": ""
-    },
-    {
-      "id": 4,
-      "nome": "Sem marca Plástico Bola",
-      "preco": "148.00",
       "descricao": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
       "foto": ""
     },
@@ -54,13 +33,6 @@
       "nome": "Inteligente Plástico Frango",
       "preco": "992.00",
       "descricao": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-      "foto": ""
-    },
-    {
-      "id": 9,
-      "nome": "Rústico Macio Sapatos",
-      "preco": "794.00",
-      "descricao": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
       "foto": ""
     },
     {
@@ -99,13 +71,6 @@
       "foto": ""
     },
     {
-      "id": 15,
-      "nome": "Rústico Plástico Calças",
-      "preco": "607.00",
-      "descricao": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-      "foto": ""
-    },
-    {
       "id": 16,
       "nome": "Pequeno Macio Sabonete",
       "preco": "90.00",
@@ -117,13 +82,6 @@
       "nome": "Prático Borracha Frango",
       "preco": "259.00",
       "descricao": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-      "foto": ""
-    },
-    {
-      "id": 18,
-      "nome": "Gostoso Algodão Carro",
-      "preco": "556.00",
-      "descricao": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
       "foto": ""
     },
     {
@@ -146,6 +104,13 @@
       "descricao": "pizzaLoca",
       "foto": "https://img.itdg.com.br/tdg/images/blog/uploads/2022/07/5-itens-necessarios-para-se-tornar-um-pizzaiolo-neste-Dia-da-Pizza.jpg?mode=crop&width={:width=%3E150,%20:height=%3E130}",
       "id": 21
+    },
+    {
+      "nome": "Pizza",
+      "preco": 2,
+      "descricao": "Pizza Muito louca",
+      "foto": "https://img.itdg.com.br/tdg/images/blog/uploads/2022/07/5-itens-necessarios-para-se-tornar-um-pizzaiolo-neste-Dia-da-Pizza.jpg?mode=crop&width={:width=%3E150,%20:height=%3E130}",
+      "id": 22
     }
   ]
 }

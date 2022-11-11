@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Produto } from 'src/app/interfaces/produto';
 import { ProdutosApiService } from 'src/app/services/produtos-api.service';
 
@@ -20,7 +21,8 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutosApiService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router // permite fazer o roteamento dentro do arquivo Typescript
   ) { }
 
   ngOnInit(): void {
@@ -36,8 +38,9 @@ export class CadastroComponent implements OnInit {
         console.log(prod)
         this.snackBar.open('Produto adicionado com sucesso!', 'Ok');
         // DESAFIO: substituir o alert pelo snackbar do Material
-      }
-    )
+      })
+
+      this.router.navigateByUrl('/produtos')
   }
 }
   

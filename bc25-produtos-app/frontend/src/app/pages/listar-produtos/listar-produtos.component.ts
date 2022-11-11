@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Produto } from 'src/app/interfaces/produto';
 import { ProdutosApiService } from 'src/app/services/produtos-api.service';
 
@@ -13,7 +14,8 @@ export class ListarProdutosComponent implements OnInit {
 
   p: Produto[] = []
   constructor(
-    private produtosService: ProdutosApiService
+    private produtosService: ProdutosApiService,
+    private router: Router
   ) { }
 
   ngOnInit(): void { // é chamado quando o componente é mostrado na tela (renderizado)
@@ -22,4 +24,8 @@ export class ListarProdutosComponent implements OnInit {
     })
   }
 
+  deletar(idDeletar: Produto) {
+    
+    this.produtosService.deletarPorId(idDeletar.id as number).subscribe()
+  }
 }

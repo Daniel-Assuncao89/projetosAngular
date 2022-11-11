@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Produto } from 'src/app/interfaces/produto';
 import { ProdutosApiService } from 'src/app/services/produtos-api.service';
 
@@ -27,8 +27,8 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private rota: ActivatedRoute, // permite acessar as informações (parametros) da rota que está ativa no momento
-
-    private produtoService: ProdutosApiService
+    private produtoService: ProdutosApiService,
+    private router: Router
   ) { }
 
 
@@ -43,6 +43,9 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.procurarPorId(parseInt(idProduto)).subscribe(
       (prod) => {
         this.produto = prod
+      /**
+       * setValue permite alterar o valor dos campos de um formGroup
+       */
 
         this.produtoForm.setValue({
           descricao: prod.descricao,
@@ -56,10 +59,13 @@ export class ProdutoComponent implements OnInit {
     }
     )
   }
-  /**
-   * setValue permite alterar o valor dos campos de um formGroup
-   */
-
   
+  deletar() {
+    this.produtoService.deletarPorId(this.produto.id as number).subscribe(
+      () => {
+        this.router.navigateByUrl('/produtos')
+      }
+    )
+  }
 
 }

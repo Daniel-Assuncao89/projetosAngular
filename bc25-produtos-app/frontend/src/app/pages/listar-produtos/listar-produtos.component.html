@@ -13,9 +13,9 @@
       <button [routerLink]="'/produtos/'+ item.id" mat-stroked-button color="primary" matTooltip="Editar Produto">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-stroked-button color="warn"matTooltip="Deletar Produto">
+      <a href="/produtos" mat-stroked-button color="warn"matTooltip="Deletar Produto" (click)="deletar(item)" >
         <mat-icon>delete</mat-icon>
-      </button>
+      </a>
     </mat-card-actions>
   </mat-card>
 </main>

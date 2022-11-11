@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { TestarNumeroGuard } from "./guards/testar-numero.guard";
 import { CadastroComponent } from "./pages/cadastro/cadastro.component";
 import { Error404Component } from "./pages/error404/error404.component";
 import { ListarProdutosComponent } from "./pages/listar-produtos/listar-produtos.component";
@@ -33,12 +34,13 @@ const rotas: Routes = [
     },
     {
         path: 'produtos/:idProduto', // rota com o parametro idProduto
-        component: ProdutoComponent
+        component: ProdutoComponent,
+        canActivate: [ TestarNumeroGuard]
     },
-    {
+     {
         path: '**',
-        component: Error404Component
-    }
+         component: Error404Component
+     }
     
 ]
 
