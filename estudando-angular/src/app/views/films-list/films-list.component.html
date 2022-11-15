@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<mat-card>
+    <mat-card-title>Lista de Filmes</mat-card-title>
+    <ul>
+        <li *ngFor="let filme of filmes">
+            {{filme.name}} - {{filme.category}} - {{filme.year}}
+        </li>
+    </ul>
+    <button (click)="cadastro()">Cadastrar</button>
+</mat-card>
+
+<mat-card *ngIf="cadastrar">
+    <form action="" [formGroup]="filmesForm" (ngSubmit)="salvarFilme()">
+        <label for="name"> Nome </label> 
+        <input type="text" matInput formControlName="name"> <!-- linkando o form control ao input -->
+        <br>
+        <label for="category"> Categoria </label>
+        <input type="text" matInput formControlName="category">
+        <br>
+        <label for="year">Ano de Lançamento</label>
+        <input type="number" matInput formControlName="year">
+        <button type="submit">Salvar</button>
+    </form>
+</mat-card>
