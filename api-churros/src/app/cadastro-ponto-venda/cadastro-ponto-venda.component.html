@@ -1,0 +1,39 @@
+<main class="container">
+    <h4>Pontos de venda cadastrados</h4>
+    <ul>
+        <li *ngFor="let ponto of pontoVenda">
+            Nome: {{ponto.nome}}, Estado: {{ponto.estado}}, Cidade: {{ponto.cidade}}, Local: {{ponto.ponto}}
+        </li>
+    </ul>
+<form class="example-form" [formGroup]="localidadeForm" (ngSubmit)="salvarPonto()" class="form">
+    <h4>Cadastro novo ponto</h4>
+    <mat-form-field class="example-full-width" appearance="fill" class="nome">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Ex. Pizzaria" formControlName="nome">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="estado">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="estado">
+            <mat-option *ngFor="let estado of gEstado" [value]="estado.nome" (onSelectionChange)="uf(estado.sigla)">
+                {{estado.nome}}-{{estado.sigla}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="cidade">
+        <mat-label>Cidade</mat-label>
+        <mat-select formControlName="cidade">
+            <mat-option *ngFor="let cidade of gCidade" [value]="cidade.nome">
+                {{cidade.nome}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width nome" appearance="fill">
+        <mat-label>Ponto de Venda</mat-label>
+        <input matInput placeholder="" formControlName="ponto">
+    </mat-form-field>
+    <br>
+    <button type="submit" mat-raised-button color="warn">Cadastrar</button>
+</form>
+
+</main>
