@@ -13,7 +13,9 @@ export class CadastroPontoVendaComponent implements OnInit {
     nome: new FormControl('', [Validators.required]),
     estado: new FormControl ('', [Validators.required]),
     cidade: new FormControl ('', [Validators.required]),
-    ponto: new FormControl ('', Validators.required)
+    ponto: new FormControl ('', [Validators.required]),
+    inicio: new FormControl ('', [Validators.required]),
+    termino: new FormControl ('', [Validators.required])
   })
 
   gEstado: Estados[] = []

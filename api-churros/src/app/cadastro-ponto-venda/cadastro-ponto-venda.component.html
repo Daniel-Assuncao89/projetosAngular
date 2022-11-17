@@ -1,10 +1,14 @@
 <main class="container">
+    <mat-toolbar color="accent">
+        <span>Onde posso encontrar Churros?</span>
+      </mat-toolbar>
     <h4>Pontos de venda cadastrados</h4>
-    <ul>
+    <ul class="ul">
         <li *ngFor="let ponto of pontoVenda">
-            Nome: {{ponto.nome}}, Estado: {{ponto.estado}}, Cidade: {{ponto.cidade}}, Local: {{ponto.ponto}}
+            {{ponto.nome}} - {{ponto.ponto}} - {{ponto.cidade}} - {{ponto.estado}}({{ponto.inicio}} às {{ponto.termino}})
         </li>
     </ul>
+    <hr>
 <form class="example-form" [formGroup]="localidadeForm" (ngSubmit)="salvarPonto()" class="form">
     <h4>Cadastro novo ponto</h4>
     <mat-form-field class="example-full-width" appearance="fill" class="nome">
@@ -27,13 +31,21 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
+    <mat-form-field appearance="fill" class="estado">
+        <mat-label>Inicio</mat-label>
+            <input matInput placeholder="12:00" formControlName="inicio">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="cidade">
+        <mat-label>Termino</mat-label>
+        <input matInput placeholder="20:00" formControlName="termino">
+    </mat-form-field>
     <br>
     <mat-form-field class="example-full-width nome" appearance="fill">
         <mat-label>Ponto de Venda</mat-label>
         <input matInput placeholder="" formControlName="ponto">
     </mat-form-field>
     <br>
-    <button type="submit" mat-raised-button color="warn">Cadastrar</button>
+    <button type="submit" mat-raised-button color="accent">Cadastrar</button>
 </form>
 
 </main>

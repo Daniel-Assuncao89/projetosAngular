@@ -12,4 +12,6 @@ export interface Ponto {
     estado: string
     cidade: string
     ponto: string
+    inicio: string
+    termino: string
 }
