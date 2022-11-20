@@ -1,29 +1,24 @@
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/create">Criar</button>
-  <button mat-menu-item routerLink="/login">Login</button>
-</mat-menu>
-<table class="mat-elevation-z8">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Email</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let user of usuario; let i = index">
-    <th scope="row"> {{ i + 1 }}</th>
-    <td> {{ user.nome }} </td>
-    <td> {{ user.email }} </td>
-    <td>
-      <button (click)="removeUser(user)" mat-mini-fab color="warn">
-        <mat-icon>delete</mat-icon> 
-      </button>
+<main class="container">
+  <table class="mat-elevation-z8 table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of usuario; let i = index">
+      <th scope="row"> {{ i + 1 }}</th>
+      <td> {{ user.nome }} </td>
+      <td> {{ user.email }} </td>
       <td>
+        <button (click)="removeUser(user)" mat-mini-fab color="warn">
+          <mat-icon>delete</mat-icon> 
+        </button>
         <button routerLink="/edit/{{user.id}}" mat-mini-fab color="warn">
           <mat-icon>edit</mat-icon> 
         </button>
-      </td>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</main>
