@@ -1,0 +1,12 @@
+<nav>
+    <mat-toolbar>
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+        <span><a routerLink="/home">Colaboradores APP</a></span>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLinkActive="active" routerLink="/create">Criar</button>
+            <button mat-menu-item (click)="logout()" id="logout" routerLinkActive="active" routerLink="/home">
+                Logout <i class="material-icons">logout</i>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+</nav>

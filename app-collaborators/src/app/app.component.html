@@ -1,13 +1,2 @@
-<nav>
-    <mat-toolbar>
-        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
-        <span><a routerLink="/home">Colaboradores APP</a></span>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLinkActive="active" routerLink="/create">Criar</button>
-            <button mat-menu-item routerLinkActive="active" routerLink="/login">Login</button>
-        </mat-menu>
-    </mat-toolbar>
-
-</nav>
-
+<app-header></app-header>
 <router-outlet></router-outlet>

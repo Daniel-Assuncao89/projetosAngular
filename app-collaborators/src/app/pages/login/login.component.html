@@ -4,11 +4,11 @@
         <button (click)="signInGoogle()">
             <img src="assets\google.svg" alt="">
         </button>
-        <form [formGroup]="formLogin">
+        <form [formGroup]="formLogin" >
             <input type="email" placeholder="E-mail" formControlName="email">
             <input type="password" placeholder="Senha" formControlName="senha">
-            <button type="submit">Entrar</button>
+            <button type="submit" (click)="signInEmailAndPassword()">Entrar</button>
         </form>
-        <span>Ainda não é cadastrado?<a>Cadastre-se aqui</a></span>
+        <span>Ainda não é cadastrado?<a routerLink="/create">Cadastre-se aqui</a></span>
     </div>
 </div>

@@ -45,6 +45,9 @@
 .login-form form button {
     margin-top: 30px;
 }
+.login-form form button:hover {
+    pointer-events: painted;
+}
 
 #login-container span {
     margin-top: 25px;

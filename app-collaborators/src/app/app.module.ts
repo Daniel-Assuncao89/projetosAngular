@@ -15,6 +15,7 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
 import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from './material/material.module';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { EditUserComponent } from './pages/edit-user/edit-user.component';
     LoginComponent,
     CadastrarUsuarioComponent,
     HomeComponent,
-    EditUserComponent
+    EditUserComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -2,10 +2,10 @@
     <mat-card class="card">
         <mat-card-title>Cadastro de Novo Colaborador</mat-card-title>
         <mat-card-content>
-            <form class="example-form" [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+            <form class="example-form" [formGroup]="userForm"> <!-- (ngSubmit)="onSubmit()" novalidate -->
                 <mat-form-field>
                     <mat-label>Nome</mat-label>
-                    <input matInput type="text" formControlName="nome" placeholder="ex: Augusto silva" value="nome" required>
+                    <input matInput type="text" formControlName="nome" placeholder="ex: Augusto silva" value="nome">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Email</mat-label>
@@ -13,9 +13,9 @@
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Senha</mat-label>
-                    <input matInput type="password" formControlName="senha" placeholder="****" value="senha">
+                    <input matInput type="password" formControlName="senha" placeholder="****" value="senha" required>
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit">Salvar</button>
+                <button mat-raised-button color="primary" type="submit" (click)="createUserEmailAndPassword()">Salvar</button>
             </form>
         </mat-card-content>
     </mat-card>
