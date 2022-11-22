@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { NewColaboradorComponent } from './pages/new-colaborador/new-colaborador.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 const routes: Routes = [
   {
@@ -15,20 +18,42 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    title: "Home | Collaborators"
+  },
+  {
+    path: 'usuarios',
+    component: UsuariosComponent,
+    canActivate: [AuthGuard],
+    title: "Usuarios Cadastrados | Collaborators"
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    title: "Login | Collaborators"
   },
   {
     path: 'create',
-    component: CadastrarUsuarioComponent
+    component: CadastrarUsuarioComponent,
+    title: "Cadastre-se | Collaborators"
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    title: "Painel de controle | Collaborators"
+  },
+  {
+    path: 'dashboard/new',
+    component: NewColaboradorComponent,
+    canActivate: [AuthGuard],
+    title: "Novo colaborador | Collaborators"
   },
   {
     path: 'edit/:id',
     component: EditUserComponent
   }
+  
 ];
 
 @NgModule({

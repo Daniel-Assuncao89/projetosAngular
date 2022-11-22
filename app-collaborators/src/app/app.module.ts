@@ -16,6 +16,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from './material/material.module';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { HeaderComponent } from './components/header/header.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { NewColaboradorComponent } from './pages/new-colaborador/new-colaborador.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { HeaderComponent } from './components/header/header.component';
     CadastrarUsuarioComponent,
     HomeComponent,
     EditUserComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent,
+    UsuariosComponent,
+    NewColaboradorComponent
   ],
   imports: [
     BrowserModule,

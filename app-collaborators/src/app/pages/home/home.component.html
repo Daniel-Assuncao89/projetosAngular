@@ -1,24 +1,3 @@
-<main class="container">
-  <table class="mat-elevation-z8 table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Email</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let user of usuario; let i = index">
-      <th scope="row"> {{ i + 1 }}</th>
-      <td> {{ user.nome }} </td>
-      <td> {{ user.email }} </td>
-      <td>
-        <button (click)="removeUser(user)" mat-mini-fab color="warn">
-          <mat-icon>delete</mat-icon> 
-        </button>
-        <button routerLink="/edit/{{user.id}}" mat-mini-fab color="warn">
-          <mat-icon>edit</mat-icon> 
-        </button>
-    </tbody>
-  </table>
-</main>
+<div class="home-container">
+    <h1>Tenha controle da sua empresa com <strong>Collaborators</strong></h1>
+</div>
