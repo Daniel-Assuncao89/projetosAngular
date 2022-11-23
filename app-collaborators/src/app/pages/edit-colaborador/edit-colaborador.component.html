@@ -1,62 +1,62 @@
 <div class="container">
-    <h1>Novo colaborador</h1>
-    <form [formGroup]="formColaborador">
+    <h1>Editar colaborador</h1>
+    <form #formEdit="ngForm">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Nome</mat-label>
-            <input matInput type="text" formControlName="nome" placeholder="ex: Augusto silva">
+            <input matInput type="text" name="nome" placeholder="ex: Augusto silva" [(ngModel)]="colaborador.nome">
         </mat-form-field>
 
         <div class="double-width">
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>CPF</mat-label>
-                <input matInput type="text" formControlName="cpf" placeholder="cpf" >
+                <input matInput type="text" name="cpf" placeholder="cpf" [(ngModel)]="colaborador.cpf" >
             </mat-form-field>
     
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Data de Nascimento</mat-label>
-                <input matInput type="date" formControlName="dataNascimento" placeholder="Data nascimento">
+                <input matInput type="date" name="dataNascimento" placeholder="Data nascimento" [(ngModel)]="colaborador.dataNascimento">
             </mat-form-field>
         </div>
 
         <div class="double-width">
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Cargo</mat-label>
-                <input matInput type="text" formControlName="cargo" placeholder="ex: Engenheiro">
+                <input matInput type="text" name="cargo" placeholder="ex: Engenheiro" [(ngModel)]="colaborador.cargo">
             </mat-form-field>
     
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Setor</mat-label>
-                <input matInput type="text" formControlName="setor" placeholder="Setor">
+                <input matInput type="text" name="setor" placeholder="Setor" [(ngModel)]="colaborador.setor">
             </mat-form-field>
         </div>
 
         <div class="double-width">
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Estado</mat-label>
-                <input matInput type="text" formControlName="estado" placeholder="estado">
+                <input matInput type="text" name="estado" placeholder="estado" [(ngModel)]="colaborador.estado">
             </mat-form-field>
     
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Cidade</mat-label>
-                <input matInput type="text" formControlName="cidade" placeholder="cidade">
+                <input matInput type="text" name="cidade" placeholder="cidade" [(ngModel)]="colaborador.cidade">
             </mat-form-field>
         </div>
 
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Remuneração</mat-label>
-            <input matInput type="number" formControlName="salario" placeholder="salario">
+            <input matInput type="number" name="salario" placeholder="salario" [(ngModel)]="colaborador.salario">
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input matInput type="email" formControlName="email" placeholder="E-mail">
+            <input matInput type="email" name="email" placeholder="E-mail" [(ngModel)]="colaborador.email">
         </mat-form-field>
 
-        <label for="foto">Selecione uma foto</label>
+        <label for="foto" [(ngModel)]="colaborador.fotoUrl">Selecione uma foto</label>
         <input type="file">
 
         <div class="double-width">
-            <button class="full-width btn-submit" routerLink="/dashboard" mat-raised-button (click)="createColaborador()">Cadastrar</button>
+            <button class="full-width btn-submit" routerLink="/dashboard" mat-raised-button (click)="updateColaborador(formEdit)">Atualizar</button>
             <button class="full-width btn-close" routerLink="/home" mat-raised-button>Cancelar</button>
         </div>
     </form>

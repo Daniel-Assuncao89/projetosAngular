@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AngularFireModule} from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { NewColaboradorComponent } from './pages/new-colaborador/new-colaborador.component';
+import { EditColaboradorComponent } from './pages/edit-colaborador/edit-colaborador.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NewColaboradorComponent } from './pages/new-colaborador/new-colaborador
     HeaderComponent,
     DashboardComponent,
     UsuariosComponent,
-    NewColaboradorComponent
+    NewColaboradorComponent,
+    EditColaboradorComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { NewColaboradorComponent } from './pages/new-colaborador/new-colaborador
     AngularFireAuthModule,
     ReactiveFormsModule,
     AngularFirestoreModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

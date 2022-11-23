@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EditColaboradorComponent } from './pages/edit-colaborador/edit-colaborador.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -48,6 +49,12 @@ const routes: Routes = [
     component: NewColaboradorComponent,
     canActivate: [AuthGuard],
     title: "Novo colaborador | Collaborators"
+  },
+  {
+    path: 'dashboard/edit/:id',
+    component: EditColaboradorComponent,
+    canActivate: [AuthGuard],
+    title: "Editar colaborador | Collaborators" 
   },
   {
     path: 'edit/:id',

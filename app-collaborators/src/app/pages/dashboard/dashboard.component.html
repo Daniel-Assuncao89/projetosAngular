@@ -45,7 +45,7 @@
             <ng-container matColumnDef="excluir">
                 <th mat-header-cell *matHeaderCellDef> Excluir </th>
                 <td mat-cell *matCellDef="let collaborator"> 
-                    <button mat-icon-button>
+                    <button mat-icon-button (click)="deleteColaborador(collaborator.id)">
                         <i class="material-icons">delete</i>
                     </button>
                 </td>
@@ -54,7 +54,7 @@
             <ng-container matColumnDef="editar">
                 <th mat-header-cell *matHeaderCellDef> Editar </th>
                 <td mat-cell *matCellDef="let collaborator">
-                    <button mat-icon-button>
+                    <button mat-icon-button routerLink="/dashboard/edit/{{collaborator.id}}">
                         <i class="material-icons">edit</i>
                     </button>
                 </td>
