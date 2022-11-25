@@ -23,3 +23,13 @@
     background-color: #ca5656;
     color: #ffffff;
 }
+
+.upload-photo {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid rgba(160, 160, 160, 0.767);
+}
+
+.upload-photo::-webkit-file-upload-button {
+    display: none;
+}

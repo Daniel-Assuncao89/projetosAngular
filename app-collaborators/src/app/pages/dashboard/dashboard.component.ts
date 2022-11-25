@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailsComponent } from 'src/app/components/details/details.component';
 import { Collaborator } from 'src/app/interfaces/collaborator';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
 import { NotificationService } from 'src/app/services/notification.service';
@@ -14,22 +16,30 @@ export class DashboardComponent implements OnInit {
 
   dataSource: Collaborator[] = [] ;
 
-  constructor(private colaboradorService: ColaboradorService, private notification: NotificationService) { }
+  constructor(private colaboradorService: ColaboradorService, private notification: NotificationService,
+    private dialog: MatDialog) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.inicializarTabela();
   }
 
-  private inicializarTabela(): void {
+  private inicializarTabela() {
     this.colaboradorService.findAll().subscribe(colaboradores => {
       this.dataSource = colaboradores
     })
   }
 
-  public deleteColaborador(id: string): void {
+  public deleteColaborador(id: string) {
     this.colaboradorService.deleteColaborador(id).subscribe(response => {
       this.notification.showMessage("Deletado")
       this.inicializarTabela();
+    })
+  }
+
+  public openDetails(colaborador: Collaborator): void {
+    this.dialog.open(DetailsComponent, {
+      width: "400px",
+      data: colaborador
     })
   }
 }

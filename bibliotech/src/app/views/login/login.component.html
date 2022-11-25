@@ -1,0 +1,18 @@
+<div id="login-container">
+    <div class="google-form">
+        <h1>Login</h1>
+        <button type="submit" (click)="signInGoogle()">Continuar com o Google?
+            <input type="google" placeholder="Google" formControlName="google">
+            <img src="assets/icons/google-logo.svg" alt="Logo Google">
+        </button>
+    </div>
+    <div class="login-form">
+        <form [formGroup]="formLogin">
+            <input type="email" placeholder="E-mail" formControlName="email">
+            <input type="password" placeholder="Senha" formControlName="senha">
+            <button type="submit" (click)="signInEmailAndPassword()">Entrar</button>
+        </form>
+        <span>Ainda não tem conta? <a routerLink="/inscrever">Inscreva-se</a></span>
+    </div>
+</div>
+

@@ -53,7 +53,8 @@
         </mat-form-field>
 
         <label for="foto">Selecione uma foto</label>
-        <input type="file">
+        <input type="file" class="upload-photo" (change)="uploadFile($event)">
+        <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
 
         <div class="double-width">
             <button class="full-width btn-submit" routerLink="/dashboard" mat-raised-button (click)="createColaborador()">Cadastrar</button>

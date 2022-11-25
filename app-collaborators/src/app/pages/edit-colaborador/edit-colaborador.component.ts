@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Collaborator } from 'src/app/interfaces/collaborator';
 import { ColaboradorService } from 'src/app/services/colaborador.service';
 import { NotificationService } from 'src/app/services/notification.service';
+import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-edit-colaborador',
@@ -14,7 +15,9 @@ export class EditColaboradorComponent implements OnInit {
 
   public colaborador!: Collaborator;
 
-  constructor(private fb: FormBuilder, private notification: NotificationService, private colaboradorService: ColaboradorService, private router: Router, private route: ActivatedRoute) {}
+  public isLoading: Boolean = false
+
+  constructor(private fb: FormBuilder, private notification: NotificationService, private colaboradorService: ColaboradorService, private router: Router, private route: ActivatedRoute, private uploadService: UploadService) {}
 
   ngOnInit(): void {
     this.initializeFields()
@@ -36,6 +39,19 @@ export class EditColaboradorComponent implements OnInit {
     } else {
       this.notification.showMessage("Dados inválidos")
     } 
+  }
+
+  public uploadFile(event: any): void {
+    this.isLoading = true; // Inicio do carregamento da foto
+    const file: File = event.target.files[0];
+    this.uploadService.uploadFoto(file).subscribe(uploadResult => {
+      this.isLoading = false // Quando entra nesta função o carregamento da foto foi concluido.
+      const storageReference = uploadResult.ref;
+      const promiseFileUrl = storageReference.getDownloadURL();
+      promiseFileUrl.then((fotoUrl: string) => {
+        this.colaborador.fotoUrl = fotoUrl
+      })
+    })
   }
  
 }

@@ -43,11 +43,15 @@ export class CadastrarUsuarioComponent implements OnInit {
   }
 
   public createUserEmailAndPassword(): void {
-    const user: Usuarios = this.userForm.value;
+    if(this.userForm.valid){
+      const user: Usuarios = this.userForm.value;
     this.userService.createUserEmailAndPassword(user).subscribe(response => {
       this.notification.showMessage("Usuário cadastrado.");
       this.router.navigate(["/login"]);
     });
+    } else {
+      this.notification.showMessage("Dados invalidos")
+    }
   }
 
 }

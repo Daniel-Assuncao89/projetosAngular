@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bibliotech-equipe3": {
+      "hosting": {
+        "bibliotech": [
+          "bibliotech-equipe3"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bibliotech-equipe3"
+  }
+}
