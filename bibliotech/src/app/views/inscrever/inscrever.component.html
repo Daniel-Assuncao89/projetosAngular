@@ -9,8 +9,8 @@
         <form [formGroup]="formLogin">
             <input class="color-emailesenha" type="email" placeholder="E-mail" formControlName="email">
             <input class="color-emailesenha" type="password" placeholder="Senha" formControlName="senha">
-            <button type="submit" (click)="signInEmailAndPassword()" >Entrar</button>
+            <button type="submit" (click)="criarUsuario()" >Inscreva-se</button>
         </form>
-        <span>Não tem conta?<a routerLink="/inscrever">Inscreva-se aqui</a></span>
+        <span><a routerLink="/login">Voltar para Login</a></span>
     </div>
 </nav>

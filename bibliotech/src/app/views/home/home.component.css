@@ -1,11 +1,7 @@
 .home-container{
-      padding-top: 64px;
       width: 100%;
       height: 90%;
-      background-color: #e6e6e6;
-      background-image: url("/assets/images/banner.png");
-      background-size: 100%;
-      background-repeat: no-repeat;
+
   }
 
   .home-container h1{
@@ -14,15 +10,20 @@
       font-size: 10vh;
       line-height: 7vh;
       position: absolute;
-      left: 10%;
+      left: 3%;
       top: 20%;
   }
   
   .home-container h2{
-      width: 25%;
-      font-size: 5vh;
-      line-height: 7vh;
+      width: 45%;
+      font-size: 3vh;
+      line-height: 4vh;
       position: absolute;
-      left: 25%;
+      left: 10%;
       top: 55%;
+  }
+
+  .imagem {
+    width: 100vw;
+    height: 450px;
   }

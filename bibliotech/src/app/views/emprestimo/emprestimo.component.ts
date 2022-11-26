@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
 import { NotificationService } from 'src/app/services/notification.service';
 import { Emprestimo } from 'src/app/interfaces/emprestimo';
 import { EmprestimoService } from 'src/app/services/emprestimo.service';
@@ -32,6 +31,7 @@ export class EmprestimoComponent implements OnInit {
       telefone: ["", [Validators.required]],
       status: ["", [Validators.required]],
       livro:["", [Validators.required]],
+      date:[new Date()]
     })
    }
 

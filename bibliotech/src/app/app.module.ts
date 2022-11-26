@@ -15,10 +15,10 @@ import { MaterialModule } from './material/material.module';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { LivrosComponent } from './views/livros/livros.component';
-import { EditarLivrosComponent } from './views/editar-livros/editar-livros.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EmprestimoComponent } from './views/emprestimo/emprestimo.component';
 import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
+import { InscreverComponent } from './views/inscrever/inscrever.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +27,10 @@ import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-empr
     HomeComponent,
     LoginComponent,
     LivrosComponent,
-    EditarLivrosComponent,
     DashboardComponent,
     EmprestimoComponent,
-    EditarEmprestimoComponent
+    EditarEmprestimoComponent,
+    InscreverComponent
   ],
   imports: [
     BrowserModule,

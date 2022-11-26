@@ -1,3 +1,11 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
 table {
     width: 100%;
   }
@@ -41,4 +49,11 @@ table {
 .example-form {
     display: flex;
     flex-direction: column;
+    margin-top: 30px;
+}
+
+th {
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
 }

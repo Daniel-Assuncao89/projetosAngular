@@ -17,7 +17,7 @@ export class EmprestimoService {
     ) { }
 
   public novoEmprestimo(emprestimo: Emprestimo): Observable<any> {
-    const promise = this.firestore.collection("livros").add(emprestimo);
+    const promise = this.firestore.collection("emprestimo").add(emprestimo);
 
     return from(promise).pipe(
       catchError(error => {
@@ -28,27 +28,27 @@ export class EmprestimoService {
     )
   }
 
-  // public findAll(): Observable<any>{
-  //   const promise = this.firestore.collection("livros").get();
+   public findAll(): Observable<any>{
+     const promise = this.firestore.collection("emprestimo").get();
 
-  //   return from(promise).pipe(
+     return from(promise).pipe(
 
-  //     map((response: any) => {
+       map((response: any) => {
 
-  //       return response.docs.map((doc:any) => { 
-  //         const emprestimo: Emprestimo = doc.data() as Emprestimo;
-  //         emprestimo.id = doc.id;
-  //         return emprestimo;
-  //       })
+         return response.docs.map((doc:any) => { 
+           const emprestimo: Emprestimo = doc.data() as Emprestimo;
+          emprestimo.id = doc.id;
+           return emprestimo;
+         })
 
-  //     }),
-  //     catchError(error => {
-  //       this.notification.message("Erro ao buscar dados");
-  //       console.log(error);
-  //       return EMPTY;
-  //     })
-  //   )
-  // }
+      }),
+       catchError(error => {
+         this.notification.message("Erro ao buscar dados");
+         console.log(error);
+         return EMPTY;
+       })
+     )
+   }
 
   // public findById(id: string): Observable<any>{
   //   const promise = this.firestore.collection("livros").doc(id).get();
@@ -68,7 +68,7 @@ export class EmprestimoService {
   // }
 
   public deleteEmprestimo(id: string){
-    const promise = this.firestore.collection("livros").doc(id).delete();
+    const promise = this.firestore.collection("emprestimo").doc(id).delete();
     return from(promise).pipe(
       catchError(error => {
         this.notification.message("Erro ao excluir empréstimo");
@@ -79,7 +79,7 @@ export class EmprestimoService {
   }
 
   public updateEmprestimo(emprestimo: Emprestimo){
-    const promise = this.firestore.collection("livros").doc(emprestimo.id).update(emprestimo);
+    const promise = this.firestore.collection("emprestimo").doc(emprestimo.id).update(emprestimo);
     return from(promise).pipe(
       catchError(error => {
         this.notification.message("Erro ao atualizar");

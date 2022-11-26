@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
-import { EditarLivrosComponent } from './views/editar-livros/editar-livros.component';
 import { EmprestimoComponent } from './views/emprestimo/emprestimo.component';
 import { HomeComponent } from './views/home/home.component';
+import { InscreverComponent } from './views/inscrever/inscrever.component';
 import { LivrosComponent } from './views/livros/livros.component';
 import { LoginComponent } from './views/login/login.component';
 
@@ -39,12 +39,8 @@ const routes: Routes = [
     component: EditarEmprestimoComponent
   },
   {
-    path: 'livros/:id',
-    component: EditarLivrosComponent
-  },
-  {
     path: 'inscrever',
-    component: LoginComponent
+    component: InscreverComponent
   },
 ];
 

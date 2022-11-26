@@ -6,5 +6,6 @@ export interface Emprestimo{
     email: string
     telefone: string
     status: string
+    data: Date
     livro: Book
 }

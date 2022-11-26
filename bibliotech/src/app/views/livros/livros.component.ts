@@ -22,7 +22,7 @@ export class LivrosComponent implements OnInit {
 
   dataSource: Book[] = [] ;
 
-  public fotoUrl: string = ""
+  public capa: string = ""
 
   constructor(private fb: FormBuilder, private notification: NotificationService, private livroService: BookService, private router: Router, private uploadService: UploadService) { 
     this.livroForm = fb.group({
@@ -30,7 +30,6 @@ export class LivrosComponent implements OnInit {
       autor: ['', [Validators.required]],
       categoria: ['', [Validators.required]],
       isbn: ['', [Validators.required]],
-      capa: ['']
     })
   }
 
@@ -41,6 +40,7 @@ export class LivrosComponent implements OnInit {
   public criarLivro(): void {
     if(this.livroForm.valid) {
       const livro: Book = this.livroForm.value
+      livro.capa = this.capa
       this.livroService.criarLivro(livro).subscribe((resp) => {
         this.notification.message("Cadastrado com sucesso");
         this.router.navigate(["/dashboard"])
@@ -57,8 +57,8 @@ export class LivrosComponent implements OnInit {
       this.isLoading = false // Quando entra nesta função o carregamento da foto foi concluido.
       const storageReference = uploadResult.ref;
       const promiseFileUrl = storageReference.getDownloadURL();
-      promiseFileUrl.then((fotoUrl: string) => {
-        this.fotoUrl = fotoUrl
+      promiseFileUrl.then((capa: string) => {
+        this.capa = capa
       })
     })
   }
