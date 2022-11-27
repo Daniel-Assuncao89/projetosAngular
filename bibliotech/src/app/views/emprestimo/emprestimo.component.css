@@ -1,15 +1,14 @@
+.emprestimo-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+
+}
+
 .full-width{
       width: 100%;
-}
-
-.double-width{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-}
-
-.double-width .full-width{
-      width: 48%;
 }
 
 .btn-submit{

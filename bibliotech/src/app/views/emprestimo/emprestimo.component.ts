@@ -16,7 +16,7 @@ export class EmprestimoComponent implements OnInit {
 
   public formEmprestimo: FormGroup;
 
-  books: Book[] = [];
+  public books: Book[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -31,7 +31,7 @@ export class EmprestimoComponent implements OnInit {
       telefone: ["", [Validators.required]],
       status: ["", [Validators.required]],
       livro:["", [Validators.required]],
-      date:[new Date()]
+      date:[new Date().toLocaleDateString('pt-br')]
     })
    }
 

@@ -20,9 +20,9 @@ export class LivrosComponent implements OnInit {
 
   displayedColumns = ['titulo', 'categoria', 'autor', 'isbn', 'excluir'];
 
-  dataSource: Book[] = [] ;
+  public dataSource: Book[] = [] ;
 
-  public capa: string = ""
+  private capa: string = ""
 
   constructor(private fb: FormBuilder, private notification: NotificationService, private livroService: BookService, private router: Router, private uploadService: UploadService) { 
     this.livroForm = fb.group({
@@ -43,7 +43,7 @@ export class LivrosComponent implements OnInit {
       livro.capa = this.capa
       this.livroService.criarLivro(livro).subscribe((resp) => {
         this.notification.message("Cadastrado com sucesso");
-        this.router.navigate(["/dashboard"])
+        this.inicializarTabela()
       })
     } else {
       this.notification.message("Dados inválidos")
@@ -62,6 +62,7 @@ export class LivrosComponent implements OnInit {
       })
     })
   }
+
   private inicializarTabela() {
     this.livroService.findAll().subscribe(livros => {
       this.dataSource = livros

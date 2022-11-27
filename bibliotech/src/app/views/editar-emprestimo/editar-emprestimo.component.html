@@ -1,32 +1,38 @@
-<div class="container">
-      <h1>Editar Empréstimo</h1>
-      <form>
+<div class="container emprestimo-container">
+      <h1>Novo Empréstimo</h1>
+      <form #formEdit="ngForm">
             <mat-form-field class="full-width" appearance="outline">
                   <mat-label>Leitor</mat-label>
-                  <input type="text" matInput placeholder="Leitor" formControlName="nome">
+                  <input type="text" matInput placeholder="Leitor" [(ngModel)]="emprestimo.leitor" name="leitor" required>
             </mat-form-field>
 
             <mat-form-field class="full-width" appearance="outline">
                   <mat-label>E-mail</mat-label>
-                  <input type="text" matInput placeholder="E-mail" formControlName="cpf">
+                  <input type="text" matInput placeholder="E-mail" [(ngModel)]="emprestimo.email" name="email" required>
             </mat-form-field>
 
             <mat-form-field class="full-width" appearance="outline">
                   <mat-label>Telefone</mat-label>
-                  <input type="text" matInput placeholder="Telefone" formControlName="dataNascimento">
+                  <input type="text" matInput placeholder="Telefone" [(ngModel)]="emprestimo.telefone" name="telefone" required>
             </mat-form-field>  
       
             <mat-form-field class="full-width" appearance="outline">
                   <mat-label>Status</mat-label>
-                  <input type="text" matInput placeholder="Status" formControlName="cargo">
+                  <select matNativeControl [(ngModel)]="emprestimo.status" name="status" required>
+                        <option value="pendente">Pendente</option>
+                        <option value="devolvido">Devolvido</option>
+                  </select>
             </mat-form-field>
 
             <mat-form-field class="full-width" appearance="outline">
                   <mat-label>Livro</mat-label>
-                  <input type="text" matInput placeholder="Livro" formControlName="setor">
+                  <mat-select [(ngModel)]="emprestimo.livro" name="livro" required>
+                        <mat-option *ngFor="let book of books" [value]="book">
+                          {{book.titulo}}
+                        </mat-option>
+                  </mat-select>
             </mat-form-field>
 
-            <a class="full-width btn-submit" mat-raised-button>Editar</a>
+            <a class="full-width btn-submit" (click)="updateEmprestimo(formEdit)" mat-raised-button routerLink="/dashboard">Atualizar</a>
       </form>
 </div>
-

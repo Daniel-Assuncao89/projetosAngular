@@ -50,22 +50,22 @@ export class EmprestimoService {
      )
    }
 
-  // public findById(id: string): Observable<any>{
-  //   const promise = this.firestore.collection("livros").doc(id).get();
+   public findEmprestimoById(id: string) {
+     const promise = this.firestore.collection("emprestimo").doc(id).get();
 
-  //   return from(promise).pipe(
-  //     map(doc =>{
-  //       const emprestimo: Emprestimo = doc.data() as Emprestimo;
-  //       emprestimo.id = doc.id;
-  //       return emprestimo;
-  //     }),
-  //     catchError(error => {
-  //       this.notification.message("Erro ao buscar pelo id");
-  //       console.log(error);
-  //       return EMPTY;
-  //     })
-  //   )
-  // }
+    return from(promise).pipe(
+       map(doc =>{
+         const emprestimo: Emprestimo = doc.data() as Emprestimo;
+         emprestimo.id = doc.id;
+         return emprestimo;
+       }),
+       catchError(error => {
+         this.notification.message("Erro ao buscar pelo id");
+        console.log(error);
+         return EMPTY;
+       })
+     )
+   }
 
   public deleteEmprestimo(id: string){
     const promise = this.firestore.collection("emprestimo").doc(id).delete();

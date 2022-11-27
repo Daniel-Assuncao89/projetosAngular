@@ -6,12 +6,21 @@
     justify-content: center;
     align-items: center;
 }
+
 table {
     width: 100%;
-  }
+}
+
+.table-container {
+    width: 60vw;
+    height: 70vh;
+    margin-top: 30px;
+    overflow: auto;
+    background-color: gainsboro;
+}
 
 .full-width {
-    width: 100%;
+   width: 500px;
 }
 
 .double-width {
@@ -20,19 +29,12 @@ table {
     justify-content: space-between;
 }
 
-.double-width .full-width {
-    width: 48%;
+.double-width div input {
+    width: 97%;
 }
-
 .btn-submit {
     margin-top: 30px;
     background-color: #6b98f1;
-    color: #ffffff;
-}
-
-.btn-close {
-    margin-top: 30px;
-    background-color: #ca5656;
     color: #ffffff;
 }
 
@@ -50,10 +52,18 @@ table {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    width: 60vw;
+    height: 70vh;
 }
 
 th {
     font-size: 15px;
     color: black;
     font-weight: bold;
+    background-color: gainsboro;
 }
+
+tr {
+    background-color: gainsboro;
+}
+

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
 import { EmprestimoComponent } from './views/emprestimo/emprestimo.component';
@@ -16,31 +17,43 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    title: "Home | Bibliotech"
   },
   {
     path: 'livros',
-    component: LivrosComponent
+    component: LivrosComponent,
+    canActivate: [AuthGuard],
+    title: "Home | Bibliotech"
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    title: "Login | Bibliotech"
   },
   {
     path: 'emprestimo',
-    component: EmprestimoComponent
+    component: EmprestimoComponent,
+    canActivate: [AuthGuard],
+    title: "Emprestimo | Bibliotech"
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    title: "Painel de Controle | Bibliotech"
   },
   {
     path: 'emprestimo/:id',
-    component: EditarEmprestimoComponent
+    component: EditarEmprestimoComponent,
+    canActivate: [AuthGuard],
+    title: "Editar Emprestimo | Bibliotech"
   },
   {
     path: 'inscrever',
-    component: InscreverComponent
+    component: InscreverComponent,
+    title: "Inscrever-se | Bibliotech"
   },
 ];
 
