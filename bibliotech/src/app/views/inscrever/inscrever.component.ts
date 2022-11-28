@@ -40,7 +40,7 @@ export class InscreverComponent implements OnInit {
     if(this.formLogin.valid) {
       const user: User = this.formLogin.value;
       this.authService.criarUsuario(user).subscribe(credencials => {
-        this.notification.message("Bem-vindo(a)!");
+        this.notification.message("Cadastrado com Sucesso!");
         this.router.navigate(["/login"]);
       });
     }
