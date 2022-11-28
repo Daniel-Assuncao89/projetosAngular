@@ -55,6 +55,7 @@ export class LivrosComponent implements OnInit {
     const file: File = event.target.files[0];
     this.uploadService.uploadFoto(file).subscribe(uploadResult => {
       this.isLoading = false // Quando entra nesta função o carregamento da foto foi concluido.
+      this.notification.message("Upload realizado com sucesso")
       const storageReference = uploadResult.ref;
       const promiseFileUrl = storageReference.getDownloadURL();
       promiseFileUrl.then((capa: string) => {

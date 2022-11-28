@@ -32,7 +32,6 @@ export class EmprestimoService {
      const promise = this.firestore.collection("emprestimo").get();
 
      return from(promise).pipe(
-
        map((response: any) => {
 
          return response.docs.map((doc:any) => { 

@@ -30,6 +30,7 @@ export class EditarEmprestimoComponent implements OnInit {
 
   ngOnInit(): void {
     this.inicializarCampos()
+    this.mostrarLivros()
   }
 
   public inicializarCampos(): void {

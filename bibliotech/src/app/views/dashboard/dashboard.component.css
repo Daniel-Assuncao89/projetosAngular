@@ -16,7 +16,7 @@ table {
   }
   
   .avatar {
-    width: 50px;
+    width: 30px;
     border-radius: 50px;
   }
   
@@ -32,8 +32,10 @@ table {
     color: black;
     font-weight: bold;
     background-color: gainsboro;
+    height: 40px;
 }
 
 tr {
     background-color: gainsboro;
 }
+
