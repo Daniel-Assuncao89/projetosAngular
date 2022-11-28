@@ -1,0 +1,9 @@
+<main class="container">
+    <mat-card *ngFor="let item of char.data.results">
+        <mat-card-title> {{item.name}} </mat-card-title>
+        <mat-card-subtitle>{{item.id}}</mat-card-subtitle>
+        <mat-card-content>
+            <p>Description: {{item.description}}</p>
+        </mat-card-content>
+    </mat-card>
+</main>

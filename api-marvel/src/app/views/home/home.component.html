@@ -1,0 +1,10 @@
+<main class="container">
+    <mat-card *ngFor="let item of comic.data.results">
+        <mat-card-title> {{item.title}} </mat-card-title>
+        <mat-card-subtitle>{{item.id}}</mat-card-subtitle>
+        <mat-card-content>
+            <p>Page Count: {{item.pageCount}}</p>
+            <p>Description: {{item.description}}</p>
+        </mat-card-content>
+    </mat-card>
+</main>
