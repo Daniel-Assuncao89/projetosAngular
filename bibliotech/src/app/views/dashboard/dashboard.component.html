@@ -45,7 +45,7 @@
             <ng-container matColumnDef="capa">
                 <th mat-header-cell *matHeaderCellDef> Capa </th>
                 <td mat-cell *matCellDef="let emprestimo">
-                    <button mat-icon-button (click)="openDetails(emprestimo)">
+                    <button class="details" mat-icon-button (click)="openDetails(emprestimo)">
                         <img class="avatar" src="{{emprestimo.livro.capa}}" alt="">
                     </button>
                 </td>

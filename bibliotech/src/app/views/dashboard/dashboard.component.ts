@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { DetailsComponent } from 'src/app/components/details/details.component';
 import { Book } from 'src/app/interfaces/book';
 import { Emprestimo } from 'src/app/interfaces/emprestimo';
 import { BookService } from 'src/app/services/book.service';
@@ -19,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   public fotoUrl: string = ""
 
-  constructor(private notification: NotificationService, private livroService: BookService, private router: Router, private emprestimoService: EmprestimoService) {}
+  constructor(private notification: NotificationService, private livroService: BookService, private router: Router, private emprestimoService: EmprestimoService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.inicializarTabela()
@@ -32,8 +34,10 @@ export class DashboardComponent implements OnInit {
    })
   }
 
-  openDetails(id: string){
-    
+  openDetails(livro: Emprestimo){
+    this.dialog.open(DetailsComponent, {
+      data: livro
+    })
   }
 
   private inicializarTabela() {

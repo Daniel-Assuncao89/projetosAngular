@@ -19,6 +19,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EmprestimoComponent } from './views/emprestimo/emprestimo.component';
 import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
 import { InscreverComponent } from './views/inscrever/inscrever.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { InscreverComponent } from './views/inscrever/inscrever.component';
     DashboardComponent,
     EmprestimoComponent,
     EditarEmprestimoComponent,
-    InscreverComponent
+    InscreverComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
