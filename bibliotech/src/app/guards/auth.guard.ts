@@ -17,7 +17,6 @@ export class AuthGuard implements CanActivate {
     return this.fireBaseAuth.authState.pipe(
       map(user => {
         if (user) {
-          this.notification.message("Login realizado com sucesso!")
           return true
         } else {
           this.notification.message("Acesso para usuarios logados")

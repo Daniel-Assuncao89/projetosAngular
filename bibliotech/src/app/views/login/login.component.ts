@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   public signInGoogle(): void {
     this.authService.googleAuth().subscribe(credencials => {
-      this.notification.message("Bem-vindo(a)!");
+      this.notification.message("Login realizado com sucesso!")
       this.router.navigate(["/home"]);
     });
   }
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     if(this.formLogin.valid) {
       const user: User = this.formLogin.value;
       this.authService.autenticarEmaileSenha(user).subscribe(credencials => {
-        this.notification.message("Bem-vindo(a)!");
+        this.notification.message("Login realizado com sucesso!")
         this.router.navigate(["/home"]);
       });
     }
