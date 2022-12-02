@@ -8,7 +8,8 @@ const routes: Routes = [
   },
   { path: 'home', loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule),
     canActivate: [AuthGuard]
-  }
+  },
+  { path: 'clientes', loadChildren: () => import('./views/clientes/clientes.module').then(m => m.ClientesModule) }
 ];
 
 @NgModule({
