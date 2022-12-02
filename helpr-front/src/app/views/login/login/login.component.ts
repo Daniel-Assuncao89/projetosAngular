@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { Credentials } from 'src/app/interfaces/credentials';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   public signIn(): void {
     if(this.formLogin.valid) {
       // Processo de autenticar
-      const credenciais: Credential = this.formLogin.value
+      const credenciais: Credentials = this.formLogin.value
       this.authService.authenticate(credenciais).subscribe(response => {
         alert("Autenticado")
         console.log(credenciais)
