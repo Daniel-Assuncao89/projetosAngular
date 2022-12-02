@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, EMPTY } from 'rxjs';
+import { catchError, EMPTY, Observable } from 'rxjs';
 import { API_CONFIG } from '../config/api.config';
 import { Cliente } from '../interfaces/cliente';
 
@@ -21,4 +21,13 @@ export class ClienteService {
     )
   }
   
+  public create(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(`${API_CONFIG.baseUrl}/clientes`, cliente).pipe(
+      catchError(error => {
+        alert("Erro ao criar novo cliente")
+        console.error(error)
+        return EMPTY
+      })
+    )
+  }
 }
