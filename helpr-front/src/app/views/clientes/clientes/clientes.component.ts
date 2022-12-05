@@ -34,5 +34,7 @@ export class ClientesComponent implements OnInit {
     }
   }
 
-
+  public edit(id: number){
+    
+  }
 }
