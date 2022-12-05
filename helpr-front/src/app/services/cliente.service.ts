@@ -30,4 +30,16 @@ export class ClienteService {
       })
     )
   }
+
+  public delete(id: number) {
+    
+    return this.http.delete<Cliente>(`${API_CONFIG.baseUrl}/clientes/${id}`).pipe(
+      catchError(error => {
+        alert("Erro ao deletar")
+        console.error(error)
+        return EMPTY
+      })
+    )
+  }
+
 }
