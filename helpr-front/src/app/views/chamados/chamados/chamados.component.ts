@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chamado } from 'src/app/interfaces/chamado';
+import { ChamadoService } from 'src/app/services/chamado.service';
 
 @Component({
   selector: 'app-chamados',
@@ -9,27 +10,18 @@ import { Chamado } from 'src/app/interfaces/chamado';
 export class ChamadosComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'titulo', 'cliente', 'funcionario', 'dataAbertura', 'status', 'editar', 'detalhes'];
-  dataSource: Chamado[] = [{
-    idChamado: 1,
-    titulo: "Chamado 1",
-    descricao: "Chamado para teste",
-    dataAbertura: "12-04-2022",
-    status: "ATRIBUIDO",
-    cliente: {
-      nome: "Gabriel teste",
-      cpf: "123456789",
-      email: "gabriel@mail.com",
-      telefone: "123456789",
-      senha: "1234"
-    },
-    funcionario: {
-      nome: "José Almir"
-    }
-  }]
+  dataSource: Chamado[] = []
 
-  constructor() { }
+  constructor(private chamadoService: ChamadoService) { }
 
   ngOnInit(): void {
+    this.initializeTable()
+  }
+
+  private initializeTable(): void {
+    this.chamadoService.findAll().subscribe(chamados => {
+      this.dataSource = chamados
+    })
   }
 
 }
